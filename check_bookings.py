@@ -26,7 +26,7 @@ class CheckBookings:
                 room_data = pd.read_csv(self.filepath)
 
                 # boolean flag (tentatively set as false)
-                conflicts = False
+                conflicts_present = False
 
                 # for loop
                 for i in range(len(room_data) - 1):
@@ -50,30 +50,41 @@ class CheckBookings:
                         if (room_data['Start_Time'].iloc[i] < room_data['End_Time'].iloc[j]) and (room_data['End_Time'].iloc[i] > room_data['Start_Time'].iloc[j]):
 
                             # sets the conflicts boolean flag to true (as conflicts have been detected)
-                            conflicts = True
+                            conflicts_present = True
+
+                            #
+                            conflicts = []
+
+                            conflicts.insert("Conflict between request",
+                                    room_data["Request_ID"].iloc[i], "and request", room_data["Request_ID"].iloc[j])
+                            
+                            # return ("Conflict between request",
+                            #         room_data["Request_ID"].iloc[i], "and request", room_data["Request_ID"].iloc[j])
+
+                            return conflicts
 
                             # print("Conflict between request",
-                            #       room_data["Request_ID"].iloc[i], "and request", room_data["Request_ID"].iloc[j])
-
-                            return ("Conflict between request",
-                                    room_data["Request_ID"].iloc[i], "and request", room_data["Request_ID"].iloc[j])
+                            #         room_data["Request_ID"].iloc[i], "and request", room_data["Request_ID"].iloc[j])
 
                 # if the conflicts flag is False
                 if not conflicts:
-                    # print("No booking conflicts identified")
+                    # 
                     return "No booking conflicts identified"
 
             else:
-                # print("File is empty or no arguments passed")
+                # 
                 return "File is empty or no arguments passed"
+                # print("File is empty or no arguments passed")
 
         # my_file_handle = open(filepath)
         except IOError:
+            # 
             # print("File not found or path is incorrect")
-            return "File not found or path is incorrect"
+            return ("File not found or path is incorrect")
 
 
 #
-filepath = "data/testdata5.csv"
-result = CheckBookings(filepath).check_bookings()
-print(result)
+filepath = "data/testdata4.csv"
+
+
+CheckBookings(filepath).check_bookings()

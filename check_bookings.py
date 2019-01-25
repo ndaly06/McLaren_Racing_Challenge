@@ -74,6 +74,6 @@ class CheckBookings:
 
 
 #
-# filepath = "data/testdata1.csv"
-# result = CheckBookings(filepath).check_bookings()
-# print(result)
+filepath = "data/testdata5.csv"
+result = CheckBookings(filepath).check_bookings()
+print(result)

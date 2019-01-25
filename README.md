@@ -19,12 +19,18 @@ A number of assumptions were made when developing this solution.
 
 ## Running the script
 
-### Break down into end to end tests
-
 The script can be ran using the following command.
 
 ```
 python3 check_bookings.py
+```
+
+## Running the test script
+
+The tests can be ran using the following command.
+
+```
+python3 check_bookings_test.py
 ```
 
 ## Questions

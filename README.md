@@ -33,15 +33,3 @@ The tests can be ran using the following command.
 python3 check_bookings_test.py
 ```
 
-## Questions
-what time standard?
-is there a format for the room booking files?
-test the file?
-what file format?
-script or oop?
-
-Django tests
-
- To run
-
- python3 check_bookings.py

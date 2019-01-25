@@ -1,18 +1,38 @@
 # imports pandas module
 import pandas as pd
-
 import time
 
-# 
-start = time.time()
+#
+""" 
+    This is a class that detects room booking conflicts. 
+      
+    Attributes: 
+        real (int): The real part of complex number. 
+        imag (int): The imaginary part of complex number. 
+    """
 
-# creates pandas dataframe from room booking data (useful for very lareg datasets)
-room_data = pd.read_csv("data/room_booking_data.csv")
+
+class CheckBookings():
+
+    # "data/room_booking_data.csv"
+
+    # readData function
+
+
+def read_data(filepath):
+
+    # creates pandas dataframe from room booking data (useful for very lareg datasets)
+    room_data = pd.read_csv(filepath)
+
+    return room_data
+# end of readData function
+
+
+# start = time.time()
 
 # checkBookings function
 # determines if any bookings made conflict with one another
-
-def checkBookings(room_data):
+def check_bookings(room_data):
 
     # boolean flag (tentatively set as false)
     conflicts = False
@@ -39,10 +59,17 @@ def checkBookings(room_data):
 
 #####################################
 
+#
+filepath = "data/room_booking_data.csv"
+
+#
+data = readData(filepath)
+
+print(data)
 
 # invokes the checkBookings function
-checkBookings(room_data)
+# checkBookings(room_data)
 
 
-end = time.time()
-print(end - start)
+# end = time.time()
+# print(end - start)

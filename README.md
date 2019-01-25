@@ -10,3 +10,11 @@
 # what file format
 
 ASSUMED THAT BOOK REQUESTS ARE IN ORDER
+
+Assumptions
+1. booking data is related to 1 room
+2. data format is csv
+3.
+
+
+script or oop

@@ -21,8 +21,6 @@ A number of assumptions were made when developing this solution.
 
 If two meeting requests are made they are stored as follows:
 
-Request_ID, Start_Time, End_Time
-
 |  Request_ID  |  Start_Time  |   End_Time   |
 | ------------ | ------------ | ------------ |
 |      1       |   09:00:00   |   12:00:00   |
@@ -38,11 +36,16 @@ This logic is applied throughout the booking requests data to identify any confl
 
 Based on the data in the table shown, a booking conflict between request 1 and request 2 exists.
 
-A number of cases were tested:
+## Test Cases
 
-1. Does meeting 1 start during meeting 2.
-2. Does meeting 1 end during meeting 2.
-3. Does meeting 2 start and end within meeting 1.
+Can the check_booking program:
+1. handle empty files
+2. handle incorrect file paths
+3. detect if a meeting ends during another meeting (conflict)
+4. detect if a meeting starts during another meeting (conflict)
+5. detect if a meeting starts and ends during another meeting (conflict)
+6. detect every booking conflict in the file
+7. determine that no booking conflicts exist
 
 ## Running the script
 

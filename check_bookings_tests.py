@@ -10,7 +10,7 @@ import unittest
 class Test(unittest.TestCase):
 
     #
-    def test1(self):
+    def test_empty_path(self):
         """
         Tests that the script can handle empty file paths
         If the filepath is empty, "File could not be read"
@@ -19,23 +19,33 @@ class Test(unittest.TestCase):
         result = CheckBookings(filepath).check_bookings()
         #
         self.assertEqual(result, "File could not be read")
-
-    #
-    def test2(self):
+    
+    def test_wrong_path(self):
         """
-        Tests that the script can handle incorrect file paths
+        Tests that the script can handle empty file paths
         If the filepath is incorrect, "File could not be read"
         """
-        filepath = "data/test.csv"
+        filepath = "data/wrongpath.csv"
         result = CheckBookings(filepath).check_bookings()
         #
         self.assertEqual(result, "File could not be read")
 
     #
+    def test_empty_file(self):
+        """
+        Tests that the script can handle empty files
+        If the filepath is incorrect, "File could not be read"
+        """
+        filepath = "data/emptyfile.csv"
+        result = CheckBookings(filepath).check_bookings()
+        #
+        self.assertEqual(result, "File provided is empty")
+
+    #
     def test3(self):
         """
-        Does meeting 1 end within meeting 2
-
+        Tests that the script can detect if a meeting ends during another meeting 
+        which is as a conflict
         """
         filepath = "data/testdata3.csv"
         result = CheckBookings(filepath).check_bookings()
@@ -46,10 +56,8 @@ class Test(unittest.TestCase):
     #
     def test4(self):
         """
-        Tests that the script can
-
-        does a meeting start within another meeting
-        Meeting 2 starts before meeting 2 ends
+        Tests that the script can detect if a meeting starts during another meeting 
+        which is as a conflict
         """
         filepath = "data/testdata4.csv"
         result = CheckBookings(filepath).check_bookings()
@@ -61,12 +69,38 @@ class Test(unittest.TestCase):
     def test5(self):
         """
         Tests that the script can detect if a meeting starts and ends during another meeting
+        which is a conflict
         """
         filepath = "data/testdata5.csv"
         result = CheckBookings(filepath).check_bookings()
         #
         self.assertEqual(
             result, [('Booking conflict detected between request', 1, 'and request', 2)])
+
+    #
+    def test6(self):
+        """
+        Tests that the script can detect all meeting conflicts present
+        testdata6.csv contains 2 meeting conflicts
+        """
+        filepath = "data/testdata6.csv"
+        result = CheckBookings(filepath).check_bookings()
+        #
+        self.assertEqual(
+            result, [('Booking conflict detected between request', 1, 'and request', 3),
+            ('Booking conflict detected between request', 4, 'and request', 5)])
+
+    
+    def test7(self):
+        """
+        Tests that the script can confirm that no meeting conflicts exist
+        testdata7.csv contains no meeting conflicts
+        """
+        filepath = "data/testdata7.csv"
+        result = CheckBookings(filepath).check_bookings()
+        #
+        self.assertEqual(
+            result, "No booking conflicts detected in file")
 
 
 # END Test

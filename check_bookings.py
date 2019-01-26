@@ -5,12 +5,20 @@ import sys
 
 
 class CheckBookings:
+    """CheckBookings class
+    Summary of class here.
+
+    Attributes:
+        filepath: path to the file that contains the room booking data to be checked 
+                  for potential booking conflicts.
+    """
 
     #  constructor
     def __init__(self, filepath):
+        """ initialises the CheckBookings class """
         self.filepath = filepath
 
-    # check_bookings method
+    # check_bookings method that checks the bookings made to identify if any conflict with each other
     def check_bookings(self):
 
         # error handling
@@ -28,7 +36,7 @@ class CheckBookings:
                 # conflicts_present boolean flag set tentitively as False
                 conflicts_present = False
 
-                #
+                # for loop that iterates through each row in the room_data dataframe
                 for i in range(len(room_data)):
 
                     # nested for loop
@@ -70,6 +78,8 @@ class CheckBookings:
 
         except IOError:
             return "File could not be read"
+
+    # End check_bookings
 
 
 #

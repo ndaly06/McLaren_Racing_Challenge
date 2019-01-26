@@ -21,10 +21,13 @@ A number of assumptions were made when developing this solution.
 
 If two meeting requests are made they are stored as follows:
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+Request_ID, Start_Time, End_Time
+
+|  Request_ID  |  Start_Time  |   End_Time   |
+| ------------ | ------------ | ------------ |
+|      1       |   09:00:00   |   12:00:00   |
+|      2       |   11:00:00   |   14:00:00   |
+
 
 e1 between (inclusive of both endpoints) s2 and e2 OR
 e2 between (inclusive of both endpoints) s1 and e1

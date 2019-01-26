@@ -38,13 +38,9 @@ This logic is applied throughout the booking requests data to identify any confl
 
 A number of cases were tested:
 
-1. Does meeting 1 start within meeting 2
-2. Does meeting 1 end within meeting 2
-3. Does meeting 2 start and end within meeting 1
-
-Case 1: Does s1 lie within the interval [s2,e2] (s1 >= s2) && (s1 <= e2)
-Case 2: Does e1 lie within the interval [s2, e2] (e1 >= s2) && (e2 <= e2))
-Case 3: Does the point (s2, e2) lie within [s1, e1] (s1 <= s2) && (e1 >= e2)
+1. Does meeting 1 start during meeting 2.
+2. Does meeting 1 end during meeting 2.
+3. Does meeting 2 start and end within meeting 1.
 
 ## Running the script
 

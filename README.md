@@ -6,7 +6,7 @@ We would like you to write a small application that imports the contents of the 
 
 ## Prerequisites
 
-Python 3.6.4 was used alongside the Pandas, OS and uniitest libraries to develop this solution.
+Python 3.6.4 was used alongside the Pandas, OS, sys uniitest libraries to develop this solution.
 
 ## Assumptions
 
@@ -28,11 +28,15 @@ Request_ID, Start_Time, End_Time
 |      1       |   09:00:00   |   12:00:00   |
 |      2       |   11:00:00   |   14:00:00   |
 
+The data can be checked as follows:
 
-e1 between (inclusive of both endpoints) s2 and e2 OR
-e2 between (inclusive of both endpoints) s1 and e1
+If meeting 1 starts before meeting 2 ends and meeting 1 ends after meeting 2 starts then a booking conflict has occurred because meeting 2 starts at 11 am which is before meeting 1 is scheduled to end at 12 noon.
 
-They overlap if neither ends before the other starts.
+Essentially a booking conflict occurs if meeting 1 doesn't end before meeting 2 starts.
+
+This logic is applied throughout the booking requests data to identify any conflicts.
+
+A number of cases were tested:
 
 1. Does meeting 1 start within meeting 2
 2. Does meeting 1 end within meeting 2
@@ -57,4 +61,3 @@ The tests can be ran using the following command.
 ```
 python3 check_bookings_tests.py
 ```
-

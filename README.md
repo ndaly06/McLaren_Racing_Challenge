@@ -6,7 +6,7 @@ We would like you to write a small application that imports the contents of the 
 
 ## Prerequisites
 
-Python 3.6.4 was used alongside the Pandas, OS, sys uniitest libraries to develop this solution.
+Python 3.6.4 was used alongside the Pandas, OS, sys and uniitest libraries to develop this solution.
 
 ## Assumptions
 
@@ -35,6 +35,8 @@ If meeting 1 starts before meeting 2 ends and meeting 1 ends after meeting 2 sta
 Essentially a booking conflict occurs if meeting 1 doesn't end before meeting 2 starts.
 
 This logic is applied throughout the booking requests data to identify any conflicts.
+
+Based on the data in the table shown, a booking conflict between request 1 and request 2 exists.
 
 A number of cases were tested:
 

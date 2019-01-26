@@ -48,6 +48,8 @@ Can the check_booking program:
 6. detect every booking conflict in the file
 7. determine that no booking conflicts exist
 
+Each of the test cases successfully passed.
+
 ## Running the script
 
 The script can be ran using the following command and by passing in the path of the file that is to be checked as an argument.

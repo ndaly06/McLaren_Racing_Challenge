@@ -19,10 +19,10 @@ A number of assumptions were made when developing this solution.
 
 ## Running the script
 
-The script can be ran using the following command.
+The script can be ran using the following command and by passing in the path of the file that is to be checked.
 
 ```
-python3 check_bookings.py
+python3 check_bookings.py "data/testdata3.csv"
 ```
 
 ## Running the test script

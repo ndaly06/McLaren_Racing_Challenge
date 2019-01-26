@@ -16,23 +16,34 @@ class Test(unittest.TestCase):
     def test1(self):
         """
         Tests that the script can handle empty csv files
-        If the file is empty, "File is empty or no arguments passed
+        If the file is empty, "File provided is empty"
         """
         filepath = "data/testdata1.csv"
         result = CheckBookings(filepath).check_bookings()
         #
-        self.assertEqual(result, "File is empty or no arguments passed")
+        self.assertEqual(result, "File provided is empty")
 
     # 
     def test2(self):
         """
-        Tests that the script can handle empty paths
-        If the filepath is empty, "File not found or path is incorrect"
+        Tests that the script can handle empty file paths
+        If the filepath is empty/incorrect, "File could not be read"
         """
         filepath = ""
         result = CheckBookings(filepath).check_bookings()
         #
-        self.assertEqual(result, "File not found or path is incorrect")
+        self.assertEqual(result, "File could not be read")
+
+    # 
+    def test3(self):
+        """
+        Tests that the script can handle incorrect file paths
+        If the filepath is incorrect, "File could not be read"
+        """
+        filepath = "data/testda.csv"
+        result = CheckBookings(filepath).check_bookings()
+        #
+        self.assertEqual(result, "File could not be read")
 
 # END Test
 

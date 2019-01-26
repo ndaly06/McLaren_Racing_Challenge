@@ -12,7 +12,7 @@ Python 3.6.4 was used alongside the Pandas, OS, sys and uniitest libraries to de
 
 A number of assumptions were made when developing this solution.
 
-1. The booking data in the file is related to  only meeting room.
+1. The booking data in the file is related to only 1 meeting room.
 2. The file was in CSV format.
 3. The file contained three columns. (Request_ID, Start_Time, End_Time)
 4. The time is in the 24 hour system format. (HH:MM:SS)
@@ -55,7 +55,7 @@ Each of the test cases successfully passed.
 The script can be ran using the following command and by passing in the path of the file that is to be checked as an argument.
 
 ```
-python3 check_bookings.py "data/testdata3.csv"
+python3 check_bookings.py 'data/testdata3.csv'
 ```
 
 ## Running the test script
@@ -63,5 +63,5 @@ python3 check_bookings.py "data/testdata3.csv"
 The tests can be ran using the following command.
 
 ```
-python3 check_bookings_tests.py
+python3 test_checkbookings.py
 ```

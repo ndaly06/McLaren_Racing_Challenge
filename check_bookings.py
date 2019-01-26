@@ -1,25 +1,26 @@
-# imports the pandas module
-import pandas as pd
+# imports the os and sys module
 import os
 import sys
+# imports the pandas module
+import pandas as pd
 
 
 class CheckBookings:
     """CheckBookings class
-    Summary of class here.
+
 
     Attributes:
         filepath: path to the file that contains the room booking data to be checked 
                   for potential booking conflicts.
     """
 
-    #  constructor
     def __init__(self, filepath):
-        """ initialises the CheckBookings class """
+        """ constructor initialises the CheckBookings class """
         self.filepath = filepath
 
     # check_bookings method that checks the bookings made to identify if any conflict with each other
     def check_bookings(self):
+        """ check_bookings class method """
 
         # error handling
         try:
@@ -43,11 +44,11 @@ class CheckBookings:
                     for j in range(i + 1, len(room_data)):
 
                         """
-                        first booking start time = 9am
-                        first booking end time = 11am
+                        meeting 1 start time = 9am
+                        meeting 1 end time = 11am
 
-                        second booking start time = 10am
-                        second booking end time = 1pm
+                        meeting 2 start time = 10am
+                        meeting 2 end time = 1pm
 
                         if meeting 1 starts before meeting 2 ends and 
                         meeting 1 ends before meeting 2 starts then a booking 
@@ -61,7 +62,7 @@ class CheckBookings:
 
                             # appends the details of the booking conflicts to the conflicts list
                             conflicts.append(('Booking conflict detected between request',
-                                              room_data["Request_ID"].iloc[i], 'and request', room_data["Request_ID"].iloc[j]))
+                                              room_data['Request_ID'].iloc[i], 'and request', room_data['Request_ID'].iloc[j]))
 
                 # if the conflicts_present flag is true, return the contents of the conflicts list
                 if conflicts_present:
@@ -69,20 +70,22 @@ class CheckBookings:
 
                 # else return that no conflicts have been detected
                 else:
-                    return "No booking conflicts detected in file"
+                    return 'No booking conflicts detected in file'
 
             # else the file is empty
             else:
                 #
-                return "File provided is empty"
+                return 'File provided is empty'
 
         except IOError:
-            return "File could not be read"
+            return 'File could not be read'
 
     # End check_bookings
 
 
 #
 if __name__ == '__main__':
+
     check = CheckBookings(sys.argv[1])
     print(check.check_bookings())
+    

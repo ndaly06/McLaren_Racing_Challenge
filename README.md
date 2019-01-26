@@ -39,8 +39,9 @@ Based on the data in the table shown, a booking conflict between request 1 and r
 ## Test Cases
 
 Can the check_booking program:
-1. handle empty files
+1. handle empty file paths
 2. handle incorrect file paths
+3. handle empty files
 3. detect if a meeting ends during another meeting (conflict)
 4. detect if a meeting starts during another meeting (conflict)
 5. detect if a meeting starts and ends during another meeting (conflict)

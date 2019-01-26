@@ -6,12 +6,12 @@ import pandas as pd
 
 
 class CheckBookings:
-    """CheckBookings class
-
+    """CheckBookings class: determines if any of the booking requests 
+                            in a file conflict with each other
 
     Attributes:
-        filepath: path to the file that contains the room booking data to be checked 
-                  for potential booking conflicts.
+        filepath: path to the file that contains the room booking data to be
+                  checked for potential booking conflicts.
     """
 
     def __init__(self, filepath):
@@ -37,10 +37,10 @@ class CheckBookings:
                 # conflicts_present boolean flag set tentitively as False
                 conflicts_present = False
 
-                # for loop that iterates through each row in the room_data dataframe
+                # for loop that iterates through each row in the room_data dataframe until the last row
                 for i in range(len(room_data)):
 
-                    # nested for loop
+                    # nested for loop that iterates through each row in the room_data dataframe after the first row
                     for j in range(i + 1, len(room_data)):
 
                         """
@@ -64,6 +64,9 @@ class CheckBookings:
                             conflicts.append(('Booking conflict detected between request',
                                               room_data['Request_ID'].iloc[i], 'and request', room_data['Request_ID'].iloc[j]))
 
+                    # end of nested for loop
+                # end of outer for loop
+
                 # if the conflicts_present flag is true, return the contents of the conflicts list
                 if conflicts_present:
                     return conflicts
@@ -72,20 +75,26 @@ class CheckBookings:
                 else:
                     return 'No booking conflicts detected in file'
 
-            # else the file is empty
+            # else return that the file is empty
             else:
-                #
                 return 'File provided is empty'
 
         except IOError:
             return 'File could not be read'
 
-    # End check_bookings
+    # End check_bookings method
+# End CheckBookings class
 
 
 #
 if __name__ == '__main__':
-
-    check = CheckBookings(sys.argv[1])
-    print(check.check_bookings())
-    
+    """ error handling that ensures an error message is displayed
+        if no file path is provided by the user
+    """
+    try:
+        # allows the file path to be read via the command line
+        print(CheckBookings(sys.argv[1]).check_bookings())
+    except IndexError:
+        print("No file path specified")
+        # program exit due to error
+        sys.exit(1)

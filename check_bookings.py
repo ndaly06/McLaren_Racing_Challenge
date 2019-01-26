@@ -34,7 +34,17 @@ class CheckBookings:
                     # nested for loop
                     for j in range(i + 1, len(room_data)):
 
-                        #
+                        """
+                        first booking start time = 9am
+                        first booking end time = 11am
+
+                        second booking start time = 10am
+                        second booking end time = 1pm
+
+                        if meeting 1 starts before meeting 2 ends and 
+                        meeting 1 ends before meeting 2 starts then a booking 
+                        conflict has occurred
+                        """
                         if (room_data['Start_Time'].iloc[i] < room_data['End_Time'].iloc[j] and
                                 room_data['End_Time'].iloc[i] > room_data['Start_Time'].iloc[j]):
 

@@ -6,7 +6,7 @@ We would like you to write a small application that imports the contents of the 
 
 ## Prerequisites
 
-Python 3.6.4 was used alongside the Pandas, OS, sys and uniitest libraries to develop this solution.
+Python 3.6.4 was used alongside the Pandas, OS, sys and unittest libraries to develop this solution.
 
 ## Assumptions
 

@@ -20,13 +20,8 @@ The data can be checked as follows:
 
 If meeting 1 starts before meeting 2 ends and meeting 1 ends after meeting 2 starts then a booking conflict has occurred because meeting 2 starts at 11 am which is before meeting 1 is scheduled to end at 12 noon.
 
-Essentially a booking conflict occurs if meeting 1 doesn't end before meeting 2 starts.
+Essentially a booking conflict occurs if meeting 1 doesn't end before meeting 2 starts. This logic is applied throughout the booking requests data to identify any conflicts. Based on the data in the table shown, a booking conflict between request 1 and request 2 exists.
 
-This logic is applied throughout the booking requests data to identify any conflicts.
-
-Based on the data in the table shown, a booking conflict between request 1 and request 2 exists.
-
-## Running the script
 `check_bookings.py` can be ran in the root of the directory on a specific dataset `conflicts_data1.csv` as shown below:
 ```
 python3 mclaren_racing_challenge/check_bookings.py ./tests/test_data/conflicts_data1.csv

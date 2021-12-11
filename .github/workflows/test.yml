@@ -30,3 +30,6 @@ jobs:
         run: |
           poetry run black -v --check .
           poetry run flake8 -v --ignore=E501,W503
+      - name: Run tests
+        run: |
+          poetry run pytest -v

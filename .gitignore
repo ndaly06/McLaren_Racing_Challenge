@@ -1,3 +1,16 @@
-__pycache__
-.DS_Store
+# VSCode
+.vscode/
 
+# Setup.py
+*.egg-info
+__pycache__/
+build/
+dist/
+
+# venv
+.venv
+
+# Ignore Interpreted Python
+*.pyc
+
+poetry.lock

@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "mclaren_racing_challenge"
+version = "0.1.0"
+description = "McLaren Racing Challenge"
+authors = ["Nial Daly <nial.daly@outlook.com>"]
+readme = "README.md"
+repository = "https://github.com/nialdaly/mclaren-racing-challenge"
+
+[tool.poetry.dependencies]
+python = "^3.7.9"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+pandas = "^1.3.4"
+pre-commit = "^2.16.0"
+pytest = "^6.2.5"
+
+[pytest]
+testpath = "tests"
+
+[tool.black]
+line-length = 120
+target-version = ['py37', 'py38', 'py39']

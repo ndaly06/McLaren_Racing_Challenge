@@ -14,7 +14,7 @@ class Test(unittest.TestCase):
         """
         filepath = ""
         result = CheckBookings(filepath).check_bookings()
-        self.assertEqual(result, "File could not be read")
+        self.assertEqual(result, "File could not be read.")
 
     def test_wrong_path(self):
         """
@@ -23,7 +23,7 @@ class Test(unittest.TestCase):
         """
         filepath = "./tests/test_data/wrongpath.csv"
         result = CheckBookings(filepath).check_bookings()
-        self.assertEqual(result, "File could not be read")
+        self.assertEqual(result, "File could not be read.")
 
     def test_empty_file(self):
         """
@@ -32,7 +32,7 @@ class Test(unittest.TestCase):
         """
         filepath = "./tests/test_data/emptyfile.csv"
         result = CheckBookings(filepath).check_bookings()
-        self.assertEqual(result, "File provided is empty")
+        self.assertEqual(result, "File provided is empty.")
 
     def test_conflicts1(self):
         """
@@ -90,7 +90,7 @@ class Test(unittest.TestCase):
         """
         filepath = "./tests/test_data/no_conflicts.csv"
         result = CheckBookings(filepath).check_bookings()
-        self.assertEqual(result, "No booking conflicts detected in file")
+        self.assertEqual(result, "No booking conflicts detected in file.")
 
 
 if __name__ == "__main__":

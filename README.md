@@ -1,3 +1,5 @@
+[![Unit Tests Status](https://github.com/nialdaly/mclaren-racing-challenge/workflows/mclaren-racing-challenge-tests/badge.svg)](https://github.com/nialdaly/mclaren-racing-challenge/actions?query=workflow%3Amclaren-racing-challenge-tests)
+
 # McLaren Racing Challenge
 Imagine you are provided a file containing a collection of requests to book a particular meeting room; each entry in the file specifies the start time and end time of a meeting. 
 We would like you to write a small application that imports the contents of the file and detects whether or not any of the requested bookings conflict.
